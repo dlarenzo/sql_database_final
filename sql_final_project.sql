@@ -164,7 +164,17 @@ WHERE student_id = 27;
 SELECT * FROM university
 WHERE student_id = 27;
 
+UPDATE university
+SET major = 'Software Development'
+WHERE student_id = 27;
+
 -- DELETE FROM UNIVERSITY TABLE 
+
+DELETE FROM orders
+WHERE order_id = 25;
+
+SELECT * FROM orders
+WHERE order_id = 25;
 
 DELETE FROM university
 WHERE student_id = 27;
@@ -173,9 +183,4 @@ SELECT * FROM university
 WHERE student_id = 27;
 
 
-DELETE FROM orders
-WHERE order_id = 25;
-
-SELECT * FROM orders
-WHERE order_id = 25;
 
