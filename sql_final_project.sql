@@ -109,14 +109,20 @@ VALUES
 CREATE VIEW total_items AS
 SELECT SUM(num_items) FROM orders
 
+SELECT * FROM total_items;
+
 -- AVERAGE ORDER COST
 CREATE VIEW avg_order_cost AS
 SELECT AVG(order_cost) FROM orders;
+
+SELECT * FROM avg_order_cost
 
 -- ORDER BY HIGHEST COSTING ORDER TO LOWEST COSTING ORDER
 CREATE VIEW order_cost AS
 SELECT order_id, order_cost FROM orders 
 ORDER BY order_cost DESC;
+
+SELECT * FROM order_cost;
 
 ------------------------------ JOINS ------------------------------
 -- ALL ORDERS GOING TO USA STUDENTS
@@ -126,29 +132,50 @@ FROM orders
 INNER JOIN university ON orders.student_id = university.student_id
 WHERE university.country = 'United States';
 
+SELECT * FROM usa_orders;
 
 ------------------------------ INSERT UPDATE AND DELETE ------------------------------
 -- INSERT INTO UNIVERSITY TABLE
-CREATE VIEW new_student AS
-INSERT INTO university (first_name, last_name, major, address, city, country, email)
+
+INSERT INTO university (student_id, first_name, last_name, major, addresses, city, country, email)
 VALUES
 ('Whitney', 'Spears', 'Software Development', '1515 Willowbrook Trail', 'Tooele', 'United States', 's.spears@email.com');
 
+SELECT * FROM university
+WHERE first_name = 'Whitney'
+AND last_name = 'Spears';
+
 
 -- INSERT INTO ORDERS TABLE
-CREATE VIEW new_order AS
+
 INSERT INTO orders (ordered_items, num_items, order_cost, student_id)
 VALUES
 ('1,5,6,2,2', 3, '39.88', 27);
 
+SELECT * FROM orders
+WHERE student_id = 27;
 
 -- UPDATE UNIVERSITY TABLE
-CREATE VIEW update_major AS
+
 UPDATE university
 SET major = 'Dance'
 WHERE student_id = 27;
 
+SELECT * FROM university
+WHERE student_id = 27;
+
 -- DELETE FROM UNIVERSITY TABLE 
-CREATE VIEW remove_student AS
+
 DELETE FROM university
 WHERE student_id = 27;
+
+SELECT * FROM university
+WHERE student_id = 27;
+
+
+DELETE FROM orders
+WHERE order_id = 25;
+
+SELECT * FROM orders
+WHERE order_id = 25;
+
