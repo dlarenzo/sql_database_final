@@ -139,7 +139,7 @@ SELECT * FROM usa_orders;
 
 INSERT INTO university (student_id, first_name, last_name, major, addresses, city, country, email)
 VALUES
-('Whitney', 'Spears', 'Software Development', '1515 Willowbrook Trail', 'Tooele', 'United States', 's.spears@email.com');
+(27, 'Whitney', 'Spears', 'Software Development', '1515 Willowbrook Trail', 'Tooele', 'United States', 's.spears@email.com');
 
 SELECT * FROM university
 WHERE first_name = 'Whitney'
