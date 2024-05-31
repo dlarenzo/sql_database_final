@@ -1,6 +1,7 @@
 ------------------------------ CREATE DATABASE ------------------------------
 -- CREATE DATA BASES
 CREATE DATABASE test_final;
+-- created database test_final need to create tables and insert data
 
 
 
